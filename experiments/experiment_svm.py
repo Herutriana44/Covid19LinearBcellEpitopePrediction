@@ -1,7 +1,7 @@
 import pandas as pd
 import sys
 sys.path.append('.')
-from models_logic.models import dl
+from models_logic.models import svm
 
 if __name__ == "__main__":
     df = pd.read_csv('dataset/dataset_type_2_vers2_hidropobicity.csv')
@@ -10,6 +10,6 @@ if __name__ == "__main__":
     results = []
     for prop in prop_scales:
         for size in test_sizes:
-            acc, auc = dl(df, ['Position z-score', prop], 'label', size)
+            acc, auc = svm(df, ['Position z-score', prop], 'label', size)
             results.append({'prop': prop, 'test_size': size, 'accuracy': acc, 'auc': auc})
-    pd.DataFrame(results).to_csv('results/dl_results.csv', index=False)
+    pd.DataFrame(results).to_csv('results/svm_results.csv', index=False)

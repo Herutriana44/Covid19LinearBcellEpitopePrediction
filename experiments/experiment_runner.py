@@ -1,16 +1,5 @@
 """
 Experiment Runner Coordinator
-
-Setiap algoritma memiliki script eksperimen khusus di folder 'experiments', misal:
-- experiment_dl.py   (Deep Learning)
-- experiment_nn.py   (Neural Network)
-- experiment_rf.py   (Random Forest)
-- experiment_dt.py   (Decision Tree)
-- experiment_svm.py  (SVM)
-- experiment_hmm.py  (HMM)
-
-Jalankan script sesuai algoritma yang ingin diuji!
-Contoh: python experiments/experiment_rf.py
 """
 import subprocess
 
