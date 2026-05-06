@@ -15,6 +15,7 @@ import os
 
 model_dir = 'model/'
 os.makedirs(model_dir, exist_ok=True)
+os.makedirs('results', exist_ok=True)
 
 def save_pkl(model, name):
     with open(f'{model_dir}{name}.pkl', 'wb') as f:
