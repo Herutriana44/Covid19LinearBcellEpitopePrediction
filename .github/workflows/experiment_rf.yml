@@ -19,3 +19,8 @@ jobs:
           pip install pandas scikit-learn tensorflow hmmlearn
       - name: Run Random Forest Experiment
         run: python experiments/experiment_rf.py
+      - name: Upload Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: rf-results
+          path: results/rf_results.csv

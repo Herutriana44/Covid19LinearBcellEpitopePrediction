@@ -19,3 +19,8 @@ jobs:
           pip install pandas scikit-learn tensorflow hmmlearn
       - name: Run HMM Experiment
         run: python experiments/experiment_hmm.py
+      - name: Upload Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: hmm-results
+          path: results/hmm_results.csv
