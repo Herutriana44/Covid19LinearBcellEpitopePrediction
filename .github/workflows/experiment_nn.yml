@@ -1,0 +1,25 @@
+name: Neural Network Experiment
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'experiments/experiment_nn.py'
+      - 'algorithms/neural_network.py'
+      - 'dataset/**'
+
+jobs:
+  run_experiment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas scikit-learn
+      - name: Run Neural Network Experiment
+        run: python experiments/experiment_nn.py
